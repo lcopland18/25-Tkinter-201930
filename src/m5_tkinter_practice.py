@@ -40,10 +40,14 @@ def main():
     hello_button.grid()
 
     # -------------------------------------------------------------------------
-    # TODO: 5. After reading and understanding the m3e module,
+    # DONE: 5. After reading and understanding the m3e module,
     #   ** make your Button respond to a button-press **
     #   ** by printing   "Hello"  on the Console.     **
     # -------------------------------------------------------------------------
+
+    hello_button['command'] = (lambda: print("Hello"))
+    goodbye_button['command'] = (lambda: print("Goodbye"))
+
 
     # -------------------------------------------------------------------------
     # TODO: 6. After reading and understanding the m4e module,
@@ -88,4 +92,6 @@ def main():
 # -----------------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
 # -----------------------------------------------------------------------------
+
+
 main()
