@@ -45,8 +45,8 @@ def main():
     #   ** by printing   "Hello"  on the Console.     **
     # -------------------------------------------------------------------------
 
-    hello_button['command'] = (lambda: print("Hello"))
-    goodbye_button['command'] = (lambda: print("Goodbye"))
+    hello_button['command'] = (lambda: print_hello())
+    goodbye_button['command'] = (lambda: print_goodbye())
 
 
     # -------------------------------------------------------------------------
@@ -92,6 +92,13 @@ def main():
 # -----------------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
 # -----------------------------------------------------------------------------
+
+def print_hello():
+    print("Hello")
+
+def print_goodbye():
+    print('Goodbye')
+
 
 
 main()
