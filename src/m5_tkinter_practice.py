@@ -24,8 +24,8 @@ def main():
     #   ** put a Frame on the window. **
     # -------------------------------------------------------------------------
 
-    frame1 = ttk.Frame(root,padding = 20,relief = 'groove')
-    frame2 = ttk.Frame(root,padding = 10,relief = 'raised')
+    frame1 = ttk.Frame(root,padding = 10,relief = 'groove')
+    frame2 = ttk.Frame(root,padding = 10,relief = 'groove')
     frame1.grid()
     frame2.grid()
 
@@ -34,8 +34,8 @@ def main():
     #   ** put a Button on the Frame. **
     # -------------------------------------------------------------------------
 
-    hello_button = ttk.Button(frame1, text="Hello")
-    goodbye_button = ttk.Button(frame2, text="Goodbye")
+    hello_button = ttk.Button(frame1, text="Hello, todo4")
+    goodbye_button = ttk.Button(frame2, text="Goodbye, todo4")
     goodbye_button.grid()
     hello_button.grid()
 
@@ -50,7 +50,7 @@ def main():
 
 
     # -------------------------------------------------------------------------
-    # TODO: 6. After reading and understanding the m4e module,
+    # DONE: 6. After reading and understanding the m4e module,
     #   -- Put an Entry box on the Frame.
     #   -- Put a second Button on the Frame.
     #   -- Make this new Button, when pressed, print "Hello"
@@ -58,8 +58,19 @@ def main():
     #        is the string 'ok', but print "Goodbye" otherwise.
     # -------------------------------------------------------------------------
 
+    frame3 = ttk.Frame(root, padding=20, relief='raised')
+    frame3.grid()
+
+    entry_box = ttk.Entry(frame3)
+    hello2 = ttk.Button(frame3, text = "Hello, todo6")
+    entry_box.grid()
+    hello2.grid()
+
+    hello2['command'] = (lambda: input_box(entry_box))
+
+
     # -------------------------------------------------------------------------
-    # TODO: 7.
+    # DONE: 7.
     #    -- Put a second Entry on the Frame.
     #    -- Put a third Button on the frame.
     #    -- Make this new Button respond to a button-press as follows:
@@ -82,8 +93,15 @@ def main():
     #      n = int(s)
     ####################################################################
 
+    entry2 = ttk.Entry(frame3)
+    third_button = ttk.Button(frame3,text = "Number of Prints")
+    entry2.grid()
+    third_button.grid()
+
+    third_button['command'] = (lambda: entry2_function(entry_box, entry2))
+
     # -------------------------------------------------------------------------
-    # TODO: 8. As time permits, do other interesting GUI things!
+    # DONE: 8. As time permits, do other interesting GUI things!
     # -------------------------------------------------------------------------
 
 
@@ -98,6 +116,20 @@ def print_hello():
 
 def print_goodbye():
     print('Goodbye')
+
+def input_box(insides):
+    contents = insides.get()
+    if contents == 'ok':
+        print('Hello')
+    else:
+        print('Goodbye')
+
+def entry2_function(insides,inside):
+    word = insides.get()
+    integer = int(inside.get())
+    for k in range(integer):
+        print(word)
+
 
 
 
